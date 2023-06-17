@@ -1,0 +1,65 @@
+
+.interaction-bar{
+    height: 15vh;
+    background-color: rgb(121, 175, 206);
+    border-radius: 5px;
+}
+
+.visuals{
+    height: 80vh;
+    background-color: "#3798af";
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buttons-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.change-button{
+    min-width: 5%;
+    min-height: 40%;
+    margin: 20px;
+    background-color: rgb(240, 255, 255);
+}
+
+.image{
+    height: auto; 
+    width: auto; 
+    max-width: 800px; 
+    max-height: 500px;
+}
+
+.overlay-image{
+    height: auto;
+    width: auto;
+    max-width: 800px;
+    max-height: 500px;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.header{
+    display: inline;
+    margin: 20px;
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+.hfiller{
+    display: block;
+    overflow: auto;
+    position: relative;
+    top: -4px;
+    width: inherit;
+    
+}

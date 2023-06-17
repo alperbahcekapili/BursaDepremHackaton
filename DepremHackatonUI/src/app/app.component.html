@@ -1,0 +1,23 @@
+<div class = "interaction-bar">
+ 
+  <div class = "buttons-container">
+    <label class = "header">
+      AITA
+    </label>
+  
+    <div class = "hfiller">
+  
+    </div>
+    <button mat-raised-button *ngFor="let visualOpt of visualOptions " (click)="changeImage(visualOpt)" class="change-button" >
+      {{visualOpt}}
+    </button>
+
+    
+  </div>
+</div>
+
+<div class = "visuals">
+  <img  class="image" src={{this.image}}/>
+  <img *ngIf = "overlay_opacity!=0" class= "overlay-image" src={{overlay}}/>
+  
+</div>

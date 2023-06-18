@@ -125,6 +125,13 @@ def main(argv):
 
     start, target, route = r.generate_graph()
 
+    for n in r.filtered_nodes:
+        (x,y) = (n.locx*r.grid_h, n.locy*r.grid_w)
+        # Center coordinates
+        center_coordinates = (int(r.grid_h/2)+y, int(r.grid_w/2) + x)
+        print(center_coordinates)
+        image = cv.circle(image, center_coordinates, radius, (0,255,0), thickness)
+
 
     for n in route:
         (x,y) = (n.locx*r.grid_h, n.locy*r.grid_w)
@@ -146,6 +153,13 @@ def main(argv):
     image = cv.circle(image, center_coordinates, radius, (0,0,255), thickness)
     
     
+    for n in r.filtered_nodes:
+        (x,y) = (n.locx*r.grid_h, n.locy*r.grid_w)
+        # Center coordinates
+        center_coordinates = (int(r.grid_h/2)+y, int(r.grid_w/2) + x)
+        print(center_coordinates)
+        image = cv.circle(image, center_coordinates, radius, (0,255,0), thickness)
+
     
     
 # Displaying the image 

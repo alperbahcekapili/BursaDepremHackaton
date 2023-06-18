@@ -41,6 +41,13 @@ Görüntü İşleme Adımları
 
     ![image](/Assets/ConnectedComponent.png)
 
+* Ulaşılabilir Noktaların Çıkartılması
+
+
+    ![image](/Assets/availableNodes.png)
+
+
+
 * Rota Çizimlesi
 
 

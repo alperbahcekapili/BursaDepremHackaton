@@ -61,8 +61,12 @@ def main(argv):
     if src is None:
         print ('Error opening image: ' + argv[0])
         return -1
+    cv.imshow("Source", src)
     
-    
+    # show detections 
+    dets = cv.imread("Detections.png")
+    cv.imshow("Yolov8 Detections",dets)
+
     src2 = cv.GaussianBlur(src, (3, 3), 0)
     
     
@@ -83,10 +87,10 @@ def main(argv):
     
     et,thresh1 = cv.threshold(sobeled,160,255,cv.THRESH_BINARY)
     thresh1_v1 = thresh1.copy()
-    
+    cv.imshow("After Tresholding Operation", thresh1_v1)
     kernel = cv.getStructuringElement(cv.MORPH_ELLIPSE,(40,40))
     res = cv.morphologyEx(thresh1_v1,cv.MORPH_CLOSE,kernel)
-    cv.imshow('fill',res)
+    cv.imshow('After Closing Operation',res)
     kernel = cv.getStructuringElement(cv.MORPH_RECT,(55,55))
     openres = cv.morphologyEx(res,cv.MORPH_OPEN,kernel)
     openres = 255-openres
@@ -94,7 +98,7 @@ def main(argv):
 
 
     # burada optimal yol bulma kodu
-    cv.imshow('opened',openres)
+    cv.imshow('After Opening Operation',openres)
 
     r = RoadFinder(openres)
 
@@ -145,7 +149,7 @@ def main(argv):
     
     
 # Displaying the image 
-    cv.imshow("Alper", image) 
+    cv.imshow("Optimal Route", image) 
     output = cv.connectedComponentsWithStats(openres, 8, cv.CV_32S)
     (numLabels, labels, stats, centroids) = output
     for i in range(0, numLabels):
@@ -175,7 +179,7 @@ def main(argv):
         cv.circle(output, (int(cX), int(cY)), 4, (0, 0, 255), -1)
         componentMask = (labels == i).astype("uint8") * 255
         # show our output image and connected component mask
-        cv.imshow("Output", output)
+        cv.imshow("Connected Component on Source", output)
         cv.imshow("Connected Component", componentMask)
         cv.waitKey(0)
     
@@ -224,8 +228,6 @@ def main(argv):
     
     ax.invert_yaxis()
 
-    plt.show()
-    
     # kontur = cv.drawContours(src, contours, -1, (0,255,0), 10)
     # print(kontur)
     
@@ -322,12 +324,11 @@ def main(argv):
     # # you want to erode/dilate a given image.
     # img_dilation = cv.dilate(thresh1, kernel, iterations=1)
     # img_erosion = cv.erode(img_dilation, kernel, iterations=1)
-    """ö
-    906090
+    """
     """
 
-    cv.imshow("Ortalamayla carpma", thresh1)
-    cv.imshow("Ilk hali", thresh1_v1)
+    #cv.imshow("Ortalamayla carpma", thresh1)cv.imshow("After Tresholding Sobel Operation", thresh1_v1)
+    
 
     cv.waitKey(0)
     cv.destroyAllWindows()
@@ -354,6 +355,10 @@ def main(argv):
  
 
     cv.waitKey(0)
+    plt.axis('off')
+    plt.title("Virtual Map")
+    plt.show()
+    
     
     return 0
 if __name__ == "__main__":

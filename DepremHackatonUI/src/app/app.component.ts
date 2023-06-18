@@ -7,17 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DepremHackatonUI';
-  image = "http://localhost:9000/Original.png"
-  overlay = "http://localhost:9000/Original.png"
+  image = "/assets/Original.png"
+  overlay = "/assets/Original.png"
   visualOptions=["Original", "Detections",  "RoadMask","RoadMask Overlay", "Optimal Route", "Virtual Map"]
 
   overlay_opacity = 0
 
 
   changeImage(image_type:string){
-    this.image = "http://localhost:9000/"+image_type+".png";
+    this.image = "/assets/"+image_type+".png";
     if (image_type == "RoadMask Overlay"){
-      this.overlay = "http://localhost:9000/"+"MaskOverlay"+".png";
+      this.overlay = "/assets/"+"MaskOverlay"+".png";
       this.overlay_opacity = 0.2
     }else{
       this.overlay_opacity = 0

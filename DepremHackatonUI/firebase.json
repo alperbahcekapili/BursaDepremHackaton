@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/DepremHackatonUI",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

@@ -26,11 +26,34 @@ Görüntü İşleme Adımları
 
   ![image](/Assets/Sobel.png)
 
-  * Opening ve Closing operasyonları
+  * Closing ve Opening  operasyonları
+
+
+
+    ![image](/Assets/AfterClosingOperation.png)
 
 
     ![image](/Assets/AfterOpeningOperation.png)
 
-    
-    ![image](/Assets/AfterClosingOperation.png)
+
+* Connected Components Operasyonu Sonrasında
+
+
+    ![image](/Assets/ConnectedComponent.png)
+
+* Rota Çizimlesi
+
+
+    ![image](/Assets/OptimalRoute.png)
+
+
+* Objelerin Tespit Edilmesi
+
+
+    ![image](/Assets/Detections.png)
+
+* Sanal Haritanın Oluşturulması
+  
+
+    ![image](/Assets/VirtualMap.png)
 
